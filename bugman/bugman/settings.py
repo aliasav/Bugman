@@ -11,7 +11,26 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
+PROJECT_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)),os.pardir)
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = os.path.join(BASE_DIR ,'static/')
+#STATIC_URL = '/../static/'
+# Donot use this along with STATIC_ROOT setting
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static/"),
+)
+
+# Media files (Images, docs)
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
+
+# templates directories
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, "templates"),
+)
+
+SITE_ID = 2
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -44,6 +63,7 @@ INSTALLED_APPS = (
     'reporter',
 
     # add 3rd party apps here
+    'registration',
 
 )
 
@@ -67,9 +87,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.messages.context_processors.messages",
 )
 
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, "templates"),
-)
 
 
 ROOT_URLCONF = 'bugman.urls'
@@ -101,14 +118,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATIC_URL = '/static/'
+ACCOUNT_ACTIVATION_DAYS = 7 
+REGISTRATION_AUTO_LOGIN = True
 
-# Media files (Images, docs)
-
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-MEDIA_URL = "/media/"
-
-SITE_ID = 2
