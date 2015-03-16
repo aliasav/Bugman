@@ -64,6 +64,7 @@ INSTALLED_APPS = (
 
     # add 3rd party apps here
     'registration',
+    'multiselectfield',
 
 )
 
