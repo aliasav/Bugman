@@ -9,13 +9,20 @@ To run the project:
 
 2. Install virtualenv for isolated Python environment and Activate environment.
     
-(http://docs.python-guide.org/en/latest/dev/virtualenvs/)
+    (http://docs.python-guide.org/en/latest/dev/virtualenvs/)
 
 3. Hit a "$pip install -r Requirements.txt" from respective folder, to install all dependencies.
 
-4. From project folder: 
+4. From project folder:
+
+
                         python manage.py syncdb
+
 
                         python manage.py migrate
 
-5. Run the development Python server: python manage.py runserver. 
+
+5. Run the development Python server: 
+
+
+                        python manage.py runserver. 
