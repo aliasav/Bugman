@@ -7,6 +7,8 @@ To run the project:
 
 1. You'll need git and git-flow.
 
+    (http://danielkummer.github.io/git-flow-cheatsheet/)
+
 2. Install virtualenv for isolated Python environment and Activate environment.
     
     (http://docs.python-guide.org/en/latest/dev/virtualenvs/)
