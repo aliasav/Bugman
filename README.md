@@ -5,9 +5,9 @@ A way to gamify and make bug fixing & reporting interesting.
 
 To run the project:
 
-1. You'll need git and git-flow.
+1. You'll need Python(2.x), Pip, git and git-flow.
 
-    (http://danielkummer.github.io/git-flow-cheatsheet/)
+    Git flow cheat-sheet: http://danielkummer.github.io/git-flow-cheatsheet/
 
 2. Install virtualenv for isolated Python environment and Activate environment.
     
