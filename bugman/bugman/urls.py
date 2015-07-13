@@ -2,6 +2,7 @@ from django.conf.urls import patterns, include, url, static
 from django.contrib import admin
 from django.conf import settings
 from bugman import views
+from bug import urls
 
 admin.autodiscover()
 
@@ -13,8 +14,8 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     (r'^accounts/', include('registration.backends.default.urls')),
     url(r'^admin/', include(admin.site.urls)),
-
-    url(r'^$', views.landing_page)
+    url(r'^bug/', include('bug.urls')),
+    url(r'^$', views.landing_page),
 
 ) #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 	 # change static file serving technique during production

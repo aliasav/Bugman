@@ -2,7 +2,9 @@ from django.db import models
 from django_extensions.db.fields import UUIDField
 from developer.models import Developer
 from reporter.models import Reporter
+from multiselectfield import MultiSelectField
 import datetime
+
 
 # Create your models here.
 class Bug(models.Model):
@@ -14,7 +16,8 @@ class Bug(models.Model):
 	guidelines = models.TextField(blank=True, null=True)
 
 	# datetime fields
-	created_at = models.DateTimeField(auto_now_add=True, default=datetime.datetime.now())
+	created_at = models.DateTimeField(auto_now_add=True)
+	updated_at = models.DateTimeField(auto_now=True, null=True)
 	fixed_at = models.DateTimeField(null=True)
 	
 	# foreign keys
@@ -70,7 +73,7 @@ class Bug(models.Model):
 		)
 
 	# choice fields
-	category = models.CharField(max_length=30,choices=CATEGORY_LIST, null=False, blank=False, db_index=True)
+	category = MultiSelectField(choices=CATEGORY_LIST, null=False, blank=False, db_index=True)
 	status = models.CharField(max_length=30, choices=STATUS_LIST, null=False, db_index=True)
 	priority = models.CharField(max_length=2, choices=PRIORITY_LIST, null=False, db_index=True)
 
