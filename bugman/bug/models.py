@@ -16,7 +16,8 @@ class Bug(models.Model):
 	guidelines = models.TextField(blank=True, null=True)
 
 	# datetime fields
-	created_at = models.DateTimeField(auto_now_add=True, default=datetime.datetime.now())
+	created_at = models.DateTimeField(auto_now_add=True)
+	updated_at = models.DateTimeField(auto_now=True, null=True)
 	fixed_at = models.DateTimeField(null=True)
 	
 	# foreign keys

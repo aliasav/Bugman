@@ -53,6 +53,8 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
+            
+
             <div class="row">
             <div class="col-lg-3 col-md-6">
                     <div class="panel panel-red">
@@ -311,4 +313,18 @@
     <!-- /#wrapper -->
 
     {% block individual_page_js %}
+<script>
+/*function animate_div()
+{
+    $('#circular_element').addClass('re').removeclass('ce'); 
+}*/
+
+$('#circular_element').hover(function() {
+    $(this).addClass('re');
+}, function() {
+    $(this).removeClass('re');
+});
+
+
+</script>
     {% endblock individual_page_js %}

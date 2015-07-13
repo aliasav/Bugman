@@ -31,13 +31,14 @@ class ListField(models.TextField):
         return self.get_db_prep_value(value)
 
 class Developer(models.Model):
-	user = models.OneToOneField(User, related_name='developer', db_index=True)
-	email = models.CharField(max_length=200, blank=False, null=True, db_index=True)
-	guid = UUIDField(db_index=True)
-	xp = models.CharField(max_length=20, null=True)
-	badges = ListField(null=True)
-	created_at = models.DateTimeField(auto_now_add=True, default=datetime.datetime.now())
-	active_bugs = ListField(null=True)
-	fixed_bugs = ListField(null=True)
-	
+    user = models.OneToOneField(User, related_name='developer', db_index=True)
+    email = models.CharField(max_length=200, blank=False, null=True, db_index=True)
+    guid = UUIDField(db_index=True)
+    xp = models.CharField(max_length=20, null=True)
+    badges = ListField(null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True)
+    active_bugs = ListField(null=True)
+    fixed_bugs = ListField(null=True)
+    
 
